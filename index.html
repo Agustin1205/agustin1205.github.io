@@ -5,124 +5,316 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Agustín Flores — Portfolio</title>
 
-  <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-
+  <!-- main css -->
   <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-  <header class="main-header">
-    <div class="left-header">
-      <!-- Hexagon logo -->
-      <div class="hexagon glitch" data-text="AF" id="logo-af">
-        <span>AF</span>
+  <!-- NAV (solo visible al hacer scroll) -->
+  <nav id="nav" class="nav-centered hidden-at-top">
+    <img class="nav-logo" id="navLogo" src="/mnt/data/d245e787-64f9-4165-b589-868d10204ce5.png" alt="AF logo">
+    <div class="nav-items">
+      <button class="nav-btn" data-target="projects">Projects</button>
+      <button class="nav-btn" data-target="about">Sobre mí</button>
+      <button class="nav-btn" data-target="ratings">Valoración</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="hero" class="hero">
+    <div class="hero-art" aria-hidden="true"></div>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <div class="hero-inner container">
+      <div class="hero-left">
+        <div class="hero-logo-wrap">
+          <img class="hero-logo" src="/mnt/data/d245e787-64f9-4165-b589-868d10204ce5.png" alt="logo">
+        </div>
       </div>
 
-      <div class="title-block">
-        <h1 class="glitch" data-text="AGUSTÍN FLORES" id="name-agustin">AGUSTÍN FLORES</h1>
-        <p class="subtitle">VIDEO GAME PRODUCTION</p>
+      <div class="hero-center">
+        <div class="hero-pre">VIDEO GAME PRODUCTION</div>
+
+        <h1 class="glitch" data-text="AGUSTÍN FLORES">AGUSTÍN FLORES</h1>
+
+        <div class="hero-main">PORTFOLIO</div>
+        <div class="hero-sub">GAME DESIGN · NARRATIVE DESIGN · LEVEL DESIGN</div>
+
+        <div class="hero-ctas">
+          <a class="btn primary" href="#projects">Ver proyectos</a>
+          <a class="btn outline" href="#about">Sobre mí</a>
+        </div>
       </div>
     </div>
-
-    <!-- Projects button top-right -->
-    <a href="#projects-section" class="btn-projects" id="btn-projects">Projects</a>
   </header>
 
-  <main class="container">
+  <!-- MAIN SITE -->
+  <main class="site container">
 
-    <section class="about" id="about-me">
-      <h2>Sobre mí</h2>
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <h2 class="section-title">Sobre mí</h2>
+
+      <!-- TEXTO ACTUALIZADO (Producción de Videojuegos - UTN) -->
+      <p class="section-desc">
+        Soy Agustín Flores, estudiante de Producción de Videojuegos en la UTN. 
+        Me especializo en Game Design, Systems Design y narrativa interactiva, enfocándome en crear experiencias con identidad, 
+        fundamentos sólidos, claridad mecánica y un diseño centrado en el jugador. 
+        Trabajo con metodologías de documentación profesional, iteración constante y prototipado funcional.
+      </p>
+
       <div class="about-grid">
+
+        <!-- "Quién soy" SIN CAMBIOS -->
         <div class="about-card">
           <h3>Quién soy</h3>
-          <p>Soy Agustín Flores, estudiante de Producción de Videojuegos en la UTN. Me enfoco en programación, diseño y narrativa interactiva.</p>
+          <p>
+            Estudiante de la carrera Producción de Videojuegos (UTN). 
+            En mis proyectos trabajo con enfoque sistémico, diseño centrado en el jugador, 
+            claridad mecánica y una fuerte base en iteración, documentación y pruebas.
+          </p>
         </div>
 
         <div class="about-card">
           <h3>Habilidades</h3>
           <ul>
-            <li>C#, C++, Unity, Godot</li>
-            <li>Diseño UI/UX, animaciones</li>
-            <li>HTML, CSS, JavaScript</li>
+            <li>C# · Unity · Unreal</li>
+            <li>Game Design · Level Design · Systems Design</li>
+            <li>UI/UX · Documentación profesional (GDD, pitch)</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Projects placeholder -->
-    <section id="projects-section" class="projects">
-      <h2>Proyectos</h2>
-      <p class="coming">Próximamente subiré mis proyectos — aquí tendrás demos, gifs y repositorios.</p>
+    <!-- PROJECTS -->
+    <section id="projects" class="section projects">
+      <h2 class="section-title">Proyectos</h2>
+      <p class="section-desc">Próximamente subiré todos los proyectos ya terminados.</p>
 
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-thumb">
-            <i class="fa-solid fa-hourglass-half"></i>
+      <!-- CATEGORY LOOP: Videojuegos -->
+      <div class="projects-block">
+        <div class="block-header">
+          <div>
+            <h3>Videojuegos</h3>
+            <p class="small-muted">Demos, prototipos y juegos completos</p>
           </div>
-          <div class="project-info">
-            <h4>Proyecto 1</h4>
-            <p class="soon">Próximamente</p>
+
+          <div class="card-buttons">
+            <button class="btn small outline open-size" data-cat="videojuegos" data-size="grandes">Grandes</button>
+            <button class="btn small outline open-size" data-cat="videojuegos" data-size="intermedios">Intermedios</button>
+            <button class="btn small outline open-size" data-cat="videojuegos" data-size="pequenos">Pequeños</button>
           </div>
         </div>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <i class="fa-solid fa-hourglass-half"></i>
-          </div>
-          <div class="project-info">
-            <h4>Proyecto 2</h4>
-            <p class="soon">Próximamente</p>
-          </div>
-        </div>
+        <div class="cards-row">
+          <article class="preview-card" data-cat="videojuegos" data-slug="vj-proj-1">
+            <div class="thumb">▶</div>
+            <div class="info">
+              <strong>Proyecto V1</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="videojuegos" data-slug="vj-proj-1">Abrir</button>
+          </article>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <i class="fa-solid fa-hourglass-half"></i>
-          </div>
-          <div class="project-info">
-            <h4>Proyecto 3</h4>
-            <p class="soon">Próximamente</p>
-          </div>
+          <article class="preview-card" data-cat="videojuegos" data-slug="vj-proj-2">
+            <div class="thumb">▶</div>
+            <div class="info">
+              <strong>Proyecto V2</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="videojuegos" data-slug="vj-proj-2">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="videojuegos" data-slug="vj-proj-3">
+            <div class="thumb">▶</div>
+            <div class="info">
+              <strong>Proyecto V3</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="videojuegos" data-slug="vj-proj-3">Abrir</button>
+          </article>
         </div>
       </div>
+
+      <!-- PITCHS & GDDs -->
+      <div class="projects-block">
+        <div class="block-header">
+          <div>
+            <h3>Pitchs & GDD</h3>
+            <p class="small-muted">Documentos y presentaciones</p>
+          </div>
+
+          <div class="card-buttons">
+            <button class="btn small outline open-size" data-cat="pitch" data-size="grandes">Grandes</button>
+            <button class="btn small outline open-size" data-cat="pitch" data-size="intermedios">Intermedios</button>
+            <button class="btn small outline open-size" data-cat="pitch" data-size="pequenos">Pequeños</button>
+          </div>
+        </div>
+
+        <div class="cards-row">
+          <article class="preview-card" data-cat="pitch" data-slug="p-proj-1">
+            <div class="thumb">📄</div>
+            <div class="info">
+              <strong>Pitch 1</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="pitch" data-slug="p-proj-1">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="pitch" data-slug="p-proj-2">
+            <div class="thumb">📄</div>
+            <div class="info">
+              <strong>Pitch 2</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="pitch" data-slug="p-proj-2">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="pitch" data-slug="p-proj-3">
+            <div class="thumb">📄</div>
+            <div class="info">
+              <strong>Pitch 3</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="pitch" data-slug="p-proj-3">Abrir</button>
+          </article>
+        </div>
+      </div>
+
+      <!-- NARRATIVA -->
+      <div class="projects-block">
+        <div class="block-header">
+          <div>
+            <h3>Narrativa / Guiones</h3>
+            <p class="small-muted">Historias, escenas y documentos</p>
+          </div>
+
+          <div class="card-buttons">
+            <button class="btn small outline open-size" data-cat="narrativa" data-size="grandes">Grandes</button>
+            <button class="btn small outline open-size" data-cat="narrativa" data-size="intermedios">Intermedios</button>
+            <button class="btn small outline open-size" data-cat="narrativa" data-size="pequenos">Pequeños</button>
+          </div>
+        </div>
+
+        <div class="cards-row">
+          <article class="preview-card" data-cat="narrativa" data-slug="n-proj-1">
+            <div class="thumb">📝</div>
+            <div class="info">
+              <strong>Guion 1</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="narrativa" data-slug="n-proj-1">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="narrativa" data-slug="n-proj-2">
+            <div class="thumb">📝</div>
+            <div class="info">
+              <strong>Guion 2</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="narrativa" data-slug="n-proj-2">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="narrativa" data-slug="n-proj-3">
+            <div class="thumb">📝</div>
+            <div class="info">
+              <strong>Guion 3</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="narrativa" data-slug="n-proj-3">Abrir</button>
+          </article>
+        </div>
+      </div>
+
+      <!-- GDD -->
+      <div class="projects-block">
+        <div class="block-header">
+          <div>
+            <h3>GDD</h3>
+            <p class="small-muted">Game Design Documents</p>
+          </div>
+
+          <div class="card-buttons">
+            <button class="btn small outline open-size" data-cat="gdd" data-size="grandes">Grandes</button>
+            <button class="btn small outline open-size" data-cat="gdd" data-size="intermedios">Intermedios</button>
+            <button class="btn small outline open-size" data-cat="gdd" data-size="pequenos">Pequeños</button>
+          </div>
+        </div>
+
+        <div class="cards-row">
+          <article class="preview-card" data-cat="gdd" data-slug="g-proj-1">
+            <div class="thumb">📘</div>
+            <div class="info">
+              <strong>GDD 1</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="gdd" data-slug="g-proj-1">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="gdd" data-slug="g-proj-2">
+            <div class="thumb">📘</div>
+            <div class="info">
+              <strong>GDD 2</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="gdd" data-slug="g-proj-2">Abrir</button>
+          </article>
+
+          <article class="preview-card" data-cat="gdd" data-slug="g-proj-3">
+            <div class="thumb">📘</div>
+            <div class="info">
+              <strong>GDD 3</strong>
+              <span class="muted">Próximamente</span>
+            </div>
+            <button class="card-open" data-cat="gdd" data-slug="g-proj-3">Abrir</button>
+          </article>
+        </div>
+      </div>
+
     </section>
 
-    <!-- Skills -->
-    <section class="skills">
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <label>Programming</label>
-          <div class="bar"><span style="width:90%"></span></div>
+    <!-- RATINGS -->
+    <section id="ratings" class="section ratings">
+      <h2 class="section-title">Valoraciones</h2>
+      <p class="section-desc">Acá verás la estadística agregada de todas las valoraciones que reciban mis proyectos.</p>
+
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-label">Originalidad</div>
+          <div class="stat-bar"><div class="stat-fill" id="stat-originalidad" style="width:0%"></div></div>
         </div>
 
-        <div class="skill">
-          <label>Game Design</label>
-          <div class="bar"><span style="width:80%"></span></div>
+        <div class="stat">
+          <div class="stat-label">Game Design</div>
+          <div class="stat-bar"><div class="stat-fill" id="stat-gamedesign" style="width:0%"></div></div>
         </div>
 
-        <div class="skill">
-          <label>Animation</label>
-          <div class="bar"><span style="width:65%"></span></div>
+        <div class="stat">
+          <div class="stat-label">Programación</div>
+          <div class="stat-bar"><div class="stat-fill" id="stat-programacion" style="width:0%"></div></div>
+        </div>
+
+        <div class="stat">
+          <div class="stat-label">Diseño</div>
+          <div class="stat-bar"><div class="stat-fill" id="stat-diseno" style="width:0%"></div></div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <footer class="main-footer">
-    <div class="socials">
-      <a href="https://agus-1753.itch.io/" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-gamepad"></i></a>
-      <a href="https://www.linkedin.com/in/agustin-flores-30970528a/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://x.com/Agustin16358818" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+  <footer class="footer container">
+    <div class="footer-inner">
+      <div>© 2025 — Agustín Flores</div>
+      <div class="footer-right">Portfolio</div>
     </div>
-    <p>&copy; 2025 — Agustín Flores</p>
   </footer>
 
+  <!-- script -->
   <script src="script.js"></script>
 </body>
 </html>
